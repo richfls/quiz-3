@@ -1,0 +1,78 @@
+#include <iostream>
+using namespace std;
+
+void idk(int num) {
+	cout << "give me a number" << endl;
+	cin >> num;
+	for (int i = 1; num >= i; i--)
+		cout << i<<"";
+	for (int i = 1; i <= num; i++)
+		cout << i<<"";
+	idk(num);
+}
+	
+
+int main() {
+	char c;
+	int month;
+	cout << "choose a month by number" << endl;
+	cin >> month;
+	if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
+		cout << " this month has 31 days in it" << endl;
+	else if (month == 4 || month == 6 || month == 9 || month == 11)
+		cout << " this month has 30 days in it" << endl;
+	else if (month == 2)
+		cout << " this month has 28 days in it" << endl;
+	else
+		cout << "not a month" << endl;
+
+	int room = 1;
+	while (true){
+		switch (room) {
+		case 1:
+			cout << "you can go (l)eft,(u)p,(r)ight" << endl;
+			cin >> c;
+			if (c == 'l')
+				room = 3;
+			else if (c == 'u')
+				room = 2;
+			else if (c == 'r')
+				room = 4;
+			break;
+
+		case 2:
+			cout << "you can go (d)own" << endl;
+			cin >> c;
+			if (c == 'd')
+				room = 1;
+
+			break;
+
+		case 3:
+			cout << "you can go (r)ight" << endl;
+			cin >> c;
+			if (c == 'r')
+				room = 1;
+			break;
+
+		case 4:
+			cout << "you can go (d)own , (l)eft" << endl;
+			cin >> c;
+			if (c == 'l')
+				room = 1;
+			else if (c == 'd')
+				room = 5;
+			
+			break;
+
+		case 5:
+			cout << "you can go (u)p" << endl;
+			cin >> c;
+			if (c == 'u')
+				room = 4;
+			break;
+		}
+		
+	}
+	
+}
